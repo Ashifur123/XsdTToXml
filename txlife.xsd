@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:element name="TXLife">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="UserAuthRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserLoginName" type="xs:string"/>
+              <xs:element name="Pswd" type="xs:string"/>
+              <xs:element name="VendorApp">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="VendorName">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="VendorCod" type="xs:string"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AppName" type="xs:string"/>
+                    <xs:element name="AppVer" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="TXLifeRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransRefGUID" type="xs:string"/>
+              <xs:element name="TransType">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="tc" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TransExeDate" type="xs:date"/>
+              <xs:element name="TransExeTime" type="xs:time"/>
+              <xs:element name="TransMode">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="tc" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OLifE">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Holding">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="HoldingTypeCode">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="tc" type="xs:string"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="HoldingStatus" type="xs:string"/>
+                          <xs:element name="Policy">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="PolNumber" type="xs:string"/>
+                                <xs:element name="CarrierCode" type="xs:string"/>
+                                <xs:element name="ProductType">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="LineOfBusiness">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Jurisdiction">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="EffDate" type="xs:date"/>
+                                <xs:element name="IssueDate" type="xs:date"/>
+                                <xs:element name="PaymentMode">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="PaymentAmt" type="xs:decimal"/>
+                                <xs:element name="PaymentMethod">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Annuity">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="QualPlanType">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="tc" type="xs:string"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="TotalAmtWthdrwn" type="xs:decimal"/>
+                                      <xs:element name="SurrenderValue" type="xs:decimal"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Arrangement">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ArrType">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="StartDate" type="xs:date"/>
+                                <xs:element name="NumOfModalOccurrences" type="xs:integer"/>
+                                <xs:element name="PaymentForm">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="tc" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ArrDestination">
+                                  <xs:complexType>
+                                    <xs:attribute name="PaymentPartyID" type="xs:string" use="required"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Party">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PartyTypeCode">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="tc" type="xs:string"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FullName" type="xs:string"/>
+                          <xs:element name="GovtID" type="xs:string"/>
+                          <xs:element name="GovtIDTC">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="tc" type="xs:string"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Person">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FirstName" type="xs:string"/>
+                                <xs:element name="LastName" type="xs:string"/>
+                                <xs:element name="BirthDate" type="xs:date"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="PrimaryObjectID" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
